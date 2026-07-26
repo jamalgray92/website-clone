@@ -1,9 +1,20 @@
+:root {
+    --primary: #111827;
+    --secondary: #2563eb;
+    --background: #f9fafb;
+}
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
 }
 
 body {
@@ -24,7 +35,7 @@ main {
 }
 
 button {
-    background-color: blue;
+    background-color: var(--secondary);
     color: white;
     padding: 15px 30px;
     border: none;
@@ -39,14 +50,21 @@ button:hover {
 
 
 nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
     margin-bottom: 20px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
-    font-size; 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: lightblue;
 }
 
 .hero {
@@ -72,7 +90,13 @@ nav a {
     background-color: white;
     padding: 25px;
     width:200px;
-    border-radius: 10px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
 }
 
 @media (max-width: 768px) {
@@ -92,4 +116,139 @@ footer {
     background-color: black;
     color: white;
     padding: 20px;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.hero img {
+    width: 400px;
+    border-radius: 20px;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+@media (max-width: 768px) {
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero img {
+        width: 80%;
+    }
+}
+
+.hero-text {
+    animation: slideIn 1s ease;
+}
+
+.hero img {
+    animation: fadeIn 1.5s ease;
+}
+
+
+@keyframes slideIn {
+
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity:1;
+    }
+}
+
+
+@keyframes fadeIn {
+    
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+.about {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.about h2 {
+    font-size: 35px;
+}
+
+.cta {
+    text-align: center;
+    padding: 70px 20px;
+    margin-top: 50px;
+}
+
+.cta h2 {
+    font-size: 35px;
+}
+
+.cta p {
+    font-size: 20px;
+}
+
+.project {
+    text-align: center;
+    padding: 70px 20px
+}
+
+.project-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background-color: white;
+    width: 250px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.contact-form {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+input,
+textarea {
+    width:300px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+textarea {
+    height: 120px;
 }
