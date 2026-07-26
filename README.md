@@ -1,5 +1,7 @@
 # Jamal Gray | Web Develepor Portfolio
 
+![Website Preview](screenshots/website-pfreview.png)
+
 A responsive website clone built with HTML, CSS, and Javascript.
 
 ## Features
