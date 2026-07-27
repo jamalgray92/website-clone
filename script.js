@@ -1,15 +1,23 @@
-const button = document.querySelector("button");
+const menuButton = document.querySelector(".menu-button");
+const navLinks = document.querySelector(".nav-links");
+const heroForm = document.querySelector(".hero-form");
 
-button.addEventListener("click", function() {
-    alert("Welcome to my website clone!");
-
+menuButton.addEventListener("click", function () {
+    navLinks.classList.toggle("open");
 });
 
-const form = document.querySelector("form");
+navLinks.addEventListener("click", function (event) {
+    if (event.target.tagName === "A") {
+        navLinks.classList.remove("open");
+    }
+});
 
-form.addEventListener("submit", function(event) {
+heroForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    alert("Thanks for your message!");
+    const emailInput = heroForm.querySelector("input");
 
+    alert(`Thanks! We will send template information to ${emailInput.value}.`);
+
+    heroForm.reset();
 });
